@@ -270,7 +270,7 @@ body.noscroll {
   }
 }
 .features__pic {
-  background-image: url(/images/mobile/image-interactive.jpg);
+  background-image: url(../../images/mobile/image-interactive.jpg);
   width: 31.25rem;
   height: 13.125rem;
   position: relative;
@@ -726,16 +726,16 @@ body.noscroll {
   position: relative;
 }
 .footer__right-icons .icon.facebook {
-  background-image: url(/images/icon-facebook.svg);
+  background-image: url(../../images/icon-facebook.svg);
 }
 .footer__right-icons .icon.twitter {
-  background-image: url(/images/icon-twitter.svg);
+  background-image: url(../../images/icon-twitter.svg);
 }
 .footer__right-icons .icon.pinterest {
-  background-image: url(/images/icon-pinterest.svg);
+  background-image: url(../../images/icon-pinterest.svg);
 }
 .footer__right-icons .icon.instagram {
-  background-image: url(/images/icon-instagram.svg);
+  background-image: url(../../images/icon-instagram.svg);
 }
 @media (min-width: 64em) {
   .footer__right-icons .icon::before {
