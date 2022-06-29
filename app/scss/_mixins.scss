@@ -1,0 +1,31 @@
+@use "sass:math";
+
+@function toRem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+// 376px, 1024px, 1441px,
+$breakpoints-up: (
+  "tablet": "23.5em",
+  "desktop": "64em",
+  "desktop-large": "90.0625em",
+);
+
+//375px, 1023px, 1440px
+$breakpoints-down: (
+  "mobile": "23.4375em",
+  "tablet": "63.9375em",
+  "desktop": "90em",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up,$size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down,$size)) {
+    @content;
+  }
+}

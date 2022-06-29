@@ -1,0 +1,83 @@
+@use "colors" as colors;
+@use "mixins" as *;
+@use "global";
+
+.features {
+  @extend .container, .flex;
+
+  flex-direction: column;
+  align-items: center;
+  margin-top: toRem(125);
+
+  @include breakpoint-up(desktop) {
+    flex-direction: row;
+  }
+
+  &__pic {
+    background-image: url(/images/mobile/image-interactive.jpg);
+    width: toRem(500);
+    height: toRem(210);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include breakpoint-up(tablet) {
+      height: toRem(280);
+    }
+
+    @include breakpoint-up(desktop) {
+      height: toRem(500);
+      width: toRem(730);
+    }
+  }
+
+  &__text {
+    @include breakpoint-up(desktop) {
+      position: absolute;
+      background-color: colors.$white;
+      max-width: toRem(500);
+      text-align: left;
+      padding-left: toRem(70);
+      align-self: flex-end;
+      justify-content: flex-end;
+      margin-left: toRem(295);
+    }
+
+    text-align: center;
+  }
+
+  p {
+    color: colors.$darkGray;
+    font-weight: bold;
+    line-height: toRem(25);
+
+    @include breakpoint-up(desktop) {
+      max-height: toRem(100);
+      padding-top: toRem(5);
+      line-height: toRem(20);
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; /* number of lines to show */
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  &__title {
+    font-size: toRem(30);
+    color: colors.$black;
+    text-transform: uppercase;
+    padding-top: toRem(60);
+    padding-bottom: toRem(20);
+
+    @include breakpoint-up(desktop) {
+      font-size: toRem(35);
+      padding-bottom: 0;
+      padding-top: toRem(70);
+
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* number of lines to show */
+      -webkit-box-orient: vertical;
+    }
+  }
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="/dist/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Loopstudios landing page</title>
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        color: white;
+        padding-bottom: 50px;
+      }
+      .attribution a {
+        /* color: hsl(228, 45%, 44%); */
+        text-decoration: none;
+        color: aqua;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="overlay has-fade"></div>
+      <div class="header__container">
+        <nav class="header__navbar">
+          <a href="#" class="header__logo"
+            ><img src="/images/logo.svg" alt="loopstudios"
+          /></a>
+          <a href="#" class="header__toggle" id="btnHeader">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+
+          <div class="header__links">
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Events</a>
+            <a href="#">Products</a>
+            <a href="#">Support</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="header__hero-box-container">
+        <div class="header__hero-box">
+          <h1 class="header__hero-box-text">
+            Immersive experiences that deliver
+          </h1>
+        </div>
+      </div>
+
+      <div class="header__menu has-fade">
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Events</a>
+        <a href="#">Products</a>
+        <a href="#">Support</a>
+      </div>
+    </header>
+
+    <section class="features">
+      <div class="features__pic"></div>
+      <div class="features__text">
+        <div class="features__title">The leader in interactive VR</div>
+        <p>
+          Founded in 2011, Loopstudios has been producing world-class virtual
+          reality projects for some of the best companies around the globe. Our
+          award-winning creations have transformed businesses through digital
+          experiences that bind to their brand.
+        </p>
+      </div>
+    </section>
+
+    <section class="creations">
+      <div class="creations__nav">
+        <div class="creations__text">Our creations</div>
+        <button type="submit" class="button creations__submit-desktop">
+          See All
+        </button>
+      </div>
+
+      <div class="creations__grid">
+        <div class="creations__grid-card deep-earth">
+          <h3 class="creations__grid-card-title">Deep<br />Earth</h3>
+        </div>
+        <div class="creations__grid-card night-arcade">
+          <h3 class="creations__grid-card-title">Night<br />Arcade</h3>
+        </div>
+        <div class="creations__grid-card soccer-team">
+          <h3 class="creations__grid-card-title">Soccer<br />Team VR</h3>
+        </div>
+        <div class="creations__grid-card grid">
+          <h3 class="creations__grid-card-title">The<br />Grid</h3>
+        </div>
+        <div class="creations__grid-card from-above">
+          <h3 class="creations__grid-card-title">From Up<br />Above VR</h3>
+        </div>
+        <div class="creations__grid-card pocket-borealis">
+          <h3 class="creations__grid-card-title">Pocket<br />Borealis</h3>
+        </div>
+        <div class="creations__grid-card curiosity">
+          <h3 class="creations__grid-card-title">The<br />Curiosity</h3>
+        </div>
+        <div class="creations__grid-card fisheye">
+          <h3 class="creations__grid-card-title">Make it<br />Fisheye</h3>
+        </div>
+      </div>
+      <button type="submit" class="button creations__submit-mobile">
+        See All
+      </button>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__left">
+          <div class="footer__left-logo">
+            <img src="/images/logo.svg" alt="loopstudios" />
+          </div>
+          <div class="footer__left-links">
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Events</a>
+            <a href="#">Products</a>
+            <a href="#">Support</a>
+          </div>
+        </div>
+
+        <div class="footer__right">
+          <div class="footer__right-icons">
+            <div class="icon facebook"></div>
+            <div class="icon twitter"></div>
+            <div class="icon pinterest"></div>
+            <div class="icon instagram"></div>
+          </div>
+          <div class="footer__right-copyright">
+            © 2021 Loopstudios. All rights reserved.
+          </div>
+        </div>
+      </div>
+
+      <div class="attribution container">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Shibly Sadique</a>.
+      </div>
+    </footer>
+
+    <script src="/dist/js/script.js"></script>
+  </body>
+</html>

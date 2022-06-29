@@ -1,0 +1,158 @@
+@use "colors" as colors;
+@use "mixins" as *;
+@use "global";
+
+.creations {
+  @extend .container, .flex;
+
+  flex-direction: column;
+  margin-top: toRem(120);
+  margin-bottom: toRem(120);
+
+  @include breakpoint-up(desktop) {
+    margin-top: toRem(180);
+    margin-bottom: toRem(180);
+  }
+
+  &__nav {
+    @extend .flex, .flex-jc-c, .flex-ai-c;
+
+    margin-bottom: toRem(50);
+
+    @include breakpoint-up(desktop) {
+      justify-content: space-between;
+      margin-bottom: toRem(70);
+    }
+  }
+
+  &__submit-desktop {
+    @extend .hide-for-mobile;
+    transition: all 300ms ease-in-out;
+    &:hover {
+      background-color: colors.$black;
+      color: colors.$white;
+    }
+  }
+
+  &__submit-mobile {
+    @extend .hide-for-desktop;
+  }
+
+  &__text {
+    font-size: toRem(30);
+    color: colors.$black;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .button {
+    width: toRem(160);
+    height: toRem(40);
+    text-transform: uppercase;
+    letter-spacing: toRem(4);
+    font-family: "Alata", "sans-serif";
+  }
+
+  &__grid {
+    display: grid;
+
+    @include breakpoint-up(desktop) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: toRem(30);
+    }
+
+    &-card {
+      color: colors.$white;
+      height: toRem(150);
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top: toRem(30);
+      margin-bottom: toRem(30);
+
+      @include breakpoint-up(tablet) {
+        max-width: toRem(500);
+        justify-self: center;
+      }
+
+      @include breakpoint-up(desktop) {
+        height: toRem(320);
+        margin-top: unset;
+        margin-bottom: unset;
+      }
+
+      $cards: (
+        "deep-earth",
+        "night-arcade",
+        "soccer-team",
+        "grid",
+        "from-above",
+        "pocket-borealis",
+        "curiosity",
+        "fisheye"
+      );
+
+      @each $card in $cards {
+        &.#{$card} {
+          position: relative;
+
+          &::before {
+            position: absolute;
+            content: "";
+            top: toRem(0);
+            right: toRem(0);
+            bottom: toRem(0);
+            left: toRem(0);
+            background-image: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0)
+              ),
+              url(../../images/desktop/image-#{$card}.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 300ms ease-in-out;
+          }
+
+          @include breakpoint-up(desktop) {
+            &:hover::before {
+              opacity: 0.4;
+            }
+
+            &:hover {
+              cursor: pointer;
+              .creations__grid-card-title {
+                color: colors.$black;
+              }
+            }
+          }
+        }
+      }
+
+      &-title {
+        position: relative;
+        font-weight: 300;
+        font-size: toRem(22);
+        text-transform: uppercase;
+        padding-left: toRem(25);
+        padding-top: toRem(65);
+
+        @include breakpoint-up(desktop) {
+          padding-top: toRem(250);
+          transition: all 300ms ease-in-out;
+        }
+      }
+    }
+  }
+
+  &__submit-mobile {
+    @extend .hide-for-desktop;
+
+    margin-top: toRem(40);
+    margin-bottom: toRem(120);
+    margin-top: toRem(10);
+    margin-right: auto;
+    margin-bottom: toRem(150);
+    margin-left: auto;
+  }
+}

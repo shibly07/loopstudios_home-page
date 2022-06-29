@@ -1,0 +1,160 @@
+@use "colors" as colors;
+@use "mixins" as *;
+@use "global";
+
+.header {
+  &__container {
+    @extend .container;
+  }
+  font-family: "Alata", sans-serif;
+
+  position: relative;
+  background-image: url(/images/mobile/image-hero.jpg);
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+  height: toRem(640);
+  background-size: cover;
+
+  @include breakpoint-up(tablet) {
+    background-position: center 40%;
+  }
+
+  @include breakpoint-up(desktop) {
+    background-image: url(/images/desktop/image-hero.jpg);
+  }
+
+  &.open {
+    .header__toggle {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__navbar {
+    @extend .flex, .flex-jc-sb, .flex-ai-c;
+    position: relative;
+    z-index: 1;
+    padding-top: toRem(50);
+  }
+
+  &__toggle {
+    @extend .hide-for-desktop;
+
+    > span {
+      display: block;
+      background-color: colors.$white;
+      width: toRem(25);
+      height: toRem(2);
+      &:not(:last-child) {
+        margin-bottom: toRem(5);
+      }
+
+      transition: all 300ms ease-in-out;
+      transform-origin: toRem(2.5) toRem(0.5);
+    }
+  }
+
+  &__links {
+    @extend .hide-for-mobile;
+
+    a {
+      color: colors.$white;
+      margin-left: toRem(15);
+      position: relative;
+      &:not(:last-child) {
+        margin-right: toRem(15);
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        background-color: colors.$white;
+        width: 0;
+        height: toRem(3);
+        left: 25%;
+        right: 25%;
+        bottom: toRem(-8);
+        transition: 0.3s ease-in-out;
+      }
+
+      &:hover::before {
+        width: toRem(25);
+      }
+    }
+  }
+
+  &__hero-box {
+    &-container {
+      @extend .container;
+    }
+
+    border: toRem(1) solid colors.$white;
+    margin-top: toRem(150);
+    max-width: toRem(500);
+    text-transform: uppercase;
+    padding: toRem(30);
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint-up(desktop) {
+      margin-top: toRem(124);
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &-text {
+      color: colors.$white;
+      font-family: "Josefin Sans", sans-serif;
+      font-weight: 300;
+      display: table-caption;
+
+      @include breakpoint-up(desktop) {
+        font-size: toRem(50);
+        display: table-caption;
+      }
+    }
+  }
+
+  &__menu {
+    @extend .container, .hide-for-desktop;
+
+    position: absolute;
+    z-index: 3;
+    a {
+      color: colors.$white;
+      font-family: "Josefin Sans", sans-serif;
+      font-size: toRem(25);
+      text-transform: uppercase;
+      display: block;
+      text-align: left;
+      margin-bottom: toRem(30);
+
+      &:first-child {
+        margin-top: toRem(-140);
+      }
+    }
+  }
+}
+
+.overlay {
+  @extend .hide-for-desktop;
+
+  position: fixed;
+  background-color: colors.$black;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
