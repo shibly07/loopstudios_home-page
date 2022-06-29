@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [live site URL](https://shibly07.github.io/loopstudios_home-page/)
+- Live Site URL: [loopstudios](https://shibly07.github.io/loopstudios_home-page/)
 
 ## My process
 
