@@ -9,7 +9,7 @@
   font-family: "Alata", sans-serif;
 
   position: relative;
-  background-image: url(/images/mobile/image-hero.jpg);
+  background-image: url(../../images/mobile/image-hero.jpg);
   background-blend-mode: darken;
   background-repeat: no-repeat;
   height: toRem(640);
@@ -20,7 +20,7 @@
   }
 
   @include breakpoint-up(desktop) {
-    background-image: url(/images/desktop/image-hero.jpg);
+    background-image: url(../../images/desktop/image-hero.jpg);
   }
 
   &.open {
